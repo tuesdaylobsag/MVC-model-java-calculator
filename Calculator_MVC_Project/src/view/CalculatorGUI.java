@@ -107,6 +107,9 @@ public class CalculatorGUI extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 displayFieldKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                displayFieldKeyTyped(evt);
+            }
         });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -546,8 +549,22 @@ public class CalculatorGUI extends javax.swing.JFrame {
             case KeyEvent.VK_BACK_SPACE:
                 clear();
                 break;
+        }
     }//GEN-LAST:event_displayFieldKeyReleased
-} 
+    /**
+     * This method prevent the user from entering anything different apart from 
+     * numbers
+     * @param evt 
+     */
+    private void displayFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_displayFieldKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c) || (c == KeyEvent.VK_BACK_SPACE) 
+                || (c == KeyEvent.VK_DELETE))) {
+            //getToolkit().beep();if u want sound use this
+            evt.consume();
+        }
+    }//GEN-LAST:event_displayFieldKeyTyped
+
     /**
     * Reset the variables. Display zero on the textField
     */

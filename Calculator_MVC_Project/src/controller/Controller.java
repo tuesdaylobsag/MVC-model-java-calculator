@@ -9,8 +9,6 @@ import view.CalculatorGUI;
 import view.Click;
 import view.NumbersFormEvent;
 import view.OperationsListener;
-
-
 /**
  * @author Ricardo Saumeth
  * @version 29/05/2014
@@ -53,18 +51,3 @@ public class Controller implements OperationsListener{
                 view.display(Double.toString(model.setDivision(x, y)));
         }
     }
-
-    
-
-    
-    
-    
-
-
-    
-
-    
-    
-    
-    
-
